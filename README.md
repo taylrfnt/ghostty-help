@@ -20,3 +20,4 @@
 
 All - support for Sixel #2496
 All - issues with connecting to remote devices #2998
+Linux - GTK - Custom Tabs/CSS #4200
