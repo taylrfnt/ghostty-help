@@ -20,4 +20,6 @@
 
 All - support for Sixel #2496
 All - issues with connecting to remote devices #2998
+All - Input Method Editor (IME) issues #3567 4332 4539 4854 4933 4999
 Linux - GTK - Custom Tabs/CSS #4200
+All - Conditional Keybinds - #4328
