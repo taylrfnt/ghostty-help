@@ -15,3 +15,8 @@
 | MacOS    | `clear` also purges the scrollback buffer                   | #5269                                                                | TL;DR: Use `ctrl`+`l` OR do some aliasing.  If your `$TERM` supports E3 (Ghostty does) macOS clear/ncurses will make it clear the buffer.                                                                                        |
 | MacOS    | Intel Macs - flashing/graphical bugs                        | https://discord.com/channels/1005603569187160125/1325428198078681150 | A custom no-op shader will address some of the graphical issues.  Sadly, Apple has pretty much sunset the Intel embedded graphics development and patches in favor of Apple Silicon, so there's no official fix/patch available. |
 | MacOS    | Mission Control Lag                                         | #4256 #4316                                                          |                                                                                                                                                                                                                                  |
+
+
+
+All - support for Sixel #2496
+All - issues with connecting to remote devices #2998
