@@ -19,8 +19,15 @@
 
 
 All - support for Sixel #2496
+
 All - issues with connecting to remote devices #2998
+
 All - Input Method Editor (IME) issues #3567 4332 4539 4854 4933 4999
+
 Linux - GTK - Custom Tabs/CSS #4200
+
 All - Conditional Keybinds - #4328
+
 MacOS - Make Ghostty Default Terminal ("Open with") - [https://discord.com/channels/1005603569187160125/1322675595301228646](discord - make ghostty default terminal) | TL;DR: Run `open /usr/bin`, select any item, right click and choose Ghostty in the "Open with" option (then press "Change all"...)
+
+MacOS - `copy-on-select` no longer working (1.1.0+) - #4733
