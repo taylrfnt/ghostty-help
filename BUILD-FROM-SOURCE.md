@@ -62,6 +62,26 @@ RegisterWithLaunchServices $GHOSTTY_SRC_DIR/macos/build/ReleaseLocal/Ghostty.app
 ```
 6. Find your completed `Ghostty.app` bundle in `$GHOSTTY_SRC_DIR/macos/build/ReleaseLocal` and copy it to wherever you keep your applications (ideally `/Applications`).
 
+## Misc Quirks/Errors/Tips
+### Setting versions for your builds
+Ghostty's versioning is hardcoded to `0.1` in the Xcode project configuration:
+```
+❯ rg 'MARKETING_VERSION.*'
+macos/Ghostty.xcodeproj/project.pbxproj
+817:                            MARKETING_VERSION = 0.1;
+987:                            MARKETING_VERSION = 0.1;
+1041:                           MARKETING_VERSION = 0.1;
+1078:                           MARKETING_VERSION = 0.1;
+1117:                           MARKETING_VERSION = 0.1;
+1156:                           MARKETING_VERSION = 0.1;
+```
+This really isn't a big deal, since it only applies to the MacOS native "About {app}" tile. You can still get the proper version information from the `ghostty +version` command.  That said, if you need to identify versions more quickly/easily, you can be modify the version being displayed by MacOS with a little `ripgrep` magic, so it displays the version as the commit you are building from, instead of that `0.1` value.
+
+Prior to running any of the build steps, and within `$GHOSTTY_SRC_DIR` (the location you cloned the rmeote repo to), run this command:
+```
+❯ rg --passthrough 'MARKETING_VERSION.*' -r "MARKETING_VERSION = $(git rev-parse --short HEAD);" > ./macos/Ghostty.xcodeproj/project.pbxproj > ./macos/Ghostty.xcodeproj/temp.pbxproj && mv ./macos/Ghostty.xcodeproj/temp.pbxproj ./macos/Ghostty.xcodeproj/project.pbxproj
+```
+
 ### Building from a specific commit
 If you want to build from a specific commit, you should first identify the commit hash for the commit you wish to build.  Once you have it (let's call it `$COMMIT_HASH`), you can run the following command to check it out into a new local branch (in case you want to make any new commits):
 ```
